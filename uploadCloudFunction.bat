@@ -1,0 +1,1 @@
+"D:\Program Files (x86)\微信web开发者工具\cli.bat" cloud functions deploy --e cloud1-6gfgst3yd5512e97 --n quickstartFunctions --r --project "D:\资料\嗯很\助眠" --report_first --report
