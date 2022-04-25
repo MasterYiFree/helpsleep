@@ -2,14 +2,15 @@
     "pages": [
         "pages/index/index",
         "pages/findings/findings",
-        "pages/myhome/myhome"
+        "pages/myhome/myhome",
+        "pages/consulting/consulting"
     ],
     "window": {
-        "backgroundColor": "#eeeeee",
-        "backgroundTextStyle": "light",
+        "backgroundTextStyle": "dark",
         "navigationBarBackgroundColor": "#ffffff",
         "navigationBarTitleText": "轻助眠",
-        "navigationBarTextStyle": "black"
+        "navigationBarTextStyle": "black",
+        "enablePullDownRefresh": true
     },
     "tabBar": {
         "backgroundColor": "#ffffff",
@@ -30,6 +31,12 @@
                 "selectedIconPath": "images/发现_1.png"
             },
             {
+                "pagePath": "pages/consulting/consulting",
+                "text": "咨询",
+                "iconPath": "images/首页_1.png",
+                "selectedIconPath": "images/首页_1.png"
+            },
+            {
                 "pagePath": "pages/myhome/myhome",
                 "text": "我的",
                 "iconPath": "images/我的_1.png",
@@ -38,6 +45,9 @@
         ]
     },
     "lazyCodeLoading": "requiredComponents",
+    "useExtendedLib": {
+        "weui": true
+    },
     "sitemapLocation": "sitemap.json",
     "style": "v2"
 }

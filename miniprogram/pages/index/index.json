@@ -1,5 +1,7 @@
 {
   "usingComponents": {
-    "cloud-tip-modal": "/components/cloudTipModal/index"
+        "mp-half-screen-dialog": "weui-miniprogram/half-screen-dialog/half-screen-dialog",
+        "mp-searchbar": "weui-miniprogram/searchbar/searchbar",
+        "mp-cell":"weui-miniprogram/cell/cell"
   }
 }

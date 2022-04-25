@@ -1,2 +1,15 @@
 <!--pages/myhome/myhome.wxml-->
-<text>pages/myhome/myhome.wxml</text>
+<view class="container"> 
+  <view class="userinfo">
+    
+      <mp-cells>
+          <mp-cell ext-class="usercell-class" icon="{{userInfo.avatarUrl}}">
+            <block wx:if="{{!hasUserInfo}}">
+        <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile" class="user-button"> 获取头像昵称 </button>
+    </block>
+            <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+          </mp-cell>
+      </mp-cells>
+  </view>
+</view>

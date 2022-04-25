@@ -1,2 +1,3 @@
 <!--pages/findings/findings.wxml-->
 <text>pages/findings/findings.wxml</text>
+<image src= "{{src}}"></image> 
