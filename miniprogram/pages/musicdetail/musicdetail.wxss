@@ -1,0 +1,44 @@
+/* pages/musicdetail/musicdetail.wxss */
+.page{
+    display: flex;
+    flex-direction: column;
+    margin-left: 50rpx;
+    width: 650rpx;
+    align-items: center;
+    height: 1400rpx;
+}
+.photo{
+  border-bottom:4rpx solid darkgrey;
+  width: 100%;
+}
+.detail-photo{
+    width: 100%;
+    border-bottom:4rpx solid darkgrey;
+    margin-bottom: 20rpx;
+}
+.button-style{
+    background-color:rgb(46, 139, 86);
+    border-radius: 40rpx;
+    margin-bottom: 0rpx;
+    position: fixed;
+    bottom: 0rpx;
+    margin-bottom: 20rpx;
+}
+.progress {
+    position: fixed;
+    bottom: 90rpx;
+    left: 50rpx;
+    right: 50rpx;
+    display: flex;
+    align-items: center;
+    font-size: 10pt;
+    color: rgb(87, 49, 49);
+    text-align: center;
+  }
+  .progress .bar {
+    flex: 10;
+  }
+  
+  .progress text {
+    flex-basis: 90rpx;
+  }

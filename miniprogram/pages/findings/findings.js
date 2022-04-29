@@ -1,18 +1,73 @@
 // pages/findings/findings.js
+    const app = getApp()
+    const db=wx.cloud.database()
 Page({
-
+    
     /**
      * 页面的初始数据
      */
     data: {
-        src: '../../images/发现_1.png'
+        music_list:'',
+        tech_list:''
     },
-
+    changecontent(e){
+        console.log(e);
+            this.setData({
+            item:!e.currentTarget.dataset.item
+        })
+        if(!e.currentTarget.dataset.item)
+        {
+            this.setData({
+                color1:"darkmagenta",
+                color2:"darkgray"
+            })
+        }
+        else{
+            this.setData({
+                color1:"darkgray",
+                color2:"darkmagenta"
+            })
+        }
+    },
+    getdetail(e) {
+        console.log(e)
+        let id = e.currentTarget.dataset.item._id
+        wx.navigateTo({
+          url: '/pages/musicdetail/musicdetail?id=' + id,
+        })
+      },
+      getcontent(e) {
+        console.log(e)
+        let id = e.currentTarget.dataset.item._id
+        wx.navigateTo({
+          url: '/pages/techcontent/techcontent?id=' + id,
+        })
+      },
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-
+        this.setData({
+            item:true,
+            color1:"darkmagenta",
+            color2:"darkgray"
+        })
+        db.collection("music").get({
+            success:res=>{
+              console.log(res)
+              this.setData({
+                music_list:res.data
+              })
+            }
+          })
+          db.collection("technique").get({
+            success:res=>{
+              console.log(res)
+              this.setData({
+                tech_list:res.data
+              })
+            }
+          })
     },
 
     /**

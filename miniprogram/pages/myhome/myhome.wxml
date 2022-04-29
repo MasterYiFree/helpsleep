@@ -1,15 +1,21 @@
 <!--pages/myhome/myhome.wxml-->
 <view class="container"> 
-  <view class="userinfo">
-    
-      <mp-cells>
-          <mp-cell ext-class="usercell-class" icon="{{userInfo.avatarUrl}}">
-            <block wx:if="{{!hasUserInfo}}">
-        <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile" class="user-button"> 获取头像昵称 </button>
-    </block>
-            <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-          </mp-cell>
-      </mp-cells>
+  <view class="user-info">
+      <mp-cells ext-class="my-cells" title="个人中心">
+    <mp-cell ext-class="usercell-class" value="{{userInfo.nickName}}" icon="{{userInfo.avatarUrl}}" link="{{islink}}" url="/pages/userinfo/userinfo">
+        <block wx:if="{{!hasUserInfo}}">
+            <button wx:if="{{canIUseGetUserProfile}}" bindtap="getopenid" type="primary" class="user-button"> 点击登录 </button>
+        </block>
+    </mp-cell>
+    <mp-cell value="设置" link="true" url="/pages/settings/settings"></mp-cell>
+    <mp-cell value="我的收藏" link="true" url="/pages/star/star"></mp-cell>
+    <mp-cell value="关于" link="true" url="/pages/about/about"></mp-cell>
+    <mp-cell>
+      <button open-type="feedback" type="default">意见反馈</button>
+    </mp-cell>
+</mp-cells>
   </view>
+  <button disabled="{{btndisabled}}" bindtap="showdialog" class="bt_exit">退出登录</button>
+  <mp-dialog show="{{dialogShow}}" title="您确定要退出登录吗？" buttons="{{btns}}" mask="true" bindbuttontap="tapDialogButton" >
+  </mp-dialog>
 </view>

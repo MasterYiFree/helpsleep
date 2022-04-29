@@ -5,7 +5,13 @@ Page({
      * 页面的初始数据
      */
     data: {
-
+      haveGetOpenId: false,
+      envId: '',
+      openId: '',
+      btns:[{text:'取消'},
+      {text:'确定'}],
+      dialogShow:false,
+      btndisabled:true
     },
 
     /**
@@ -18,22 +24,68 @@ Page({
             })
           }
     },
-    getUserProfile(e) {
-        // 推荐使用wx.getUserProfile获取用户信息，开发者每次通过该接口获取用户个人信息均需用户确认
-        // 开发者妥善保管用户快速填写的头像昵称，避免重复弹窗
+      getopenid(){
+        wx.showLoading({
+          title: '加载中',
+        })
+        wx.cloud.callFunction({
+          name: 'quickstartFunctions',
+      config: {
+        env: this.data.envId
+      },
+      data: {
+        type: 'getOpenId'
+      }
+        }).then((res)=>{
+          this.setData({
+            haveGetOpenId: true,
+            openId: res.result.openid
+          });
+        })
+        wx.hideLoading({
+          success: (res) => {},
+        })
         wx.getUserProfile({
           desc: '用于完善会员资料', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
           success: (res) => {
             this.setData({
               userInfo: res.userInfo,
-              hasUserInfo: true
+              hasUserInfo: true,
+              islink:true,
+              btndisabled:false
             })
           }
         })
       },
+      tapDialogButton(e) {
+          const _btn = e.detail.item.text;
+          if(_btn =='确定'){
+            this.clearOpenId();
+          }
+          this.setData({
+            dialogShow:false
+          })
+      },
+
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
+    showdialog(){
+      this.setData({
+        dialogShow:true
+      })
+    },
+    clearOpenId() {
+        this.setData({
+          haveGetOpenId: false,
+          openId: '',
+          hasUserInfo: false,
+          islink:false,
+          userInfo:'',
+          btndisabled:true
+        }); 
+    },
+
     onReady: function () {
 
     },

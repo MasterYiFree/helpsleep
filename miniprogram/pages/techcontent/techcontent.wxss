@@ -1,0 +1,12 @@
+/* pages/techcontent/techcontent.wxss */
+.page{
+    display: flex;
+    flex-direction: column;
+    margin-left: 50rpx;
+    width: 650rpx;
+    align-items: center;
+}
+.detail-photo{
+    width: 100%;
+    border-bottom:4rpx solid darkgrey;
+}

@@ -1,38 +1,18 @@
-// pages/consulting/consulting.js
-    const db=wx.cloud.database()
+// pages/settings/settings.js
 Page({
+
     /**
      * 页面的初始数据
      */
     data: {
-      swiper_main_list:'',
-      indicatorDots: true,
-      vertical: false,
-      autoplay: true,
-      interval: 2000,
-      duration: 500,
-      doctor_list:'',
+
     },
-    getdetail(e) {
-      console.log(e)
-      let id = e.currentTarget.dataset.item._id
-      wx.navigateTo({
-        url: '/pages/doctordetail/doctordetail?id=' + id,
-      })
-    },
+
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-      db.collection("consultingdetail").get({
-        success:res=>{
-          console.log(res)
-          this.setData({
-            doctor_list:res.data
-          })
-          console.log(swiper_main_list)
-        }
-      })
+
     },
 
     /**

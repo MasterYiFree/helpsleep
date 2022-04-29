@@ -1,0 +1,5 @@
+<!--pages/techcontent/techcontent.wxml-->
+<view class="page">
+    <image src="{{detail.photo}}" class="detail-photo" mode="aspectFit"></image>
+    <rich-text class="content" nodes="{{detail.content}}"></rich-text>
+</view>

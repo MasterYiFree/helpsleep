@@ -17,6 +17,7 @@ App({
       userInfo: {},
         hasUserInfo: false,
         canIUseGetUserProfile: false,
+        userid:'',
     };
   }
 });

@@ -1,0 +1,24 @@
+/* pages/doctordetail/doctordetail.wxss */
+.page{
+  display: flex;
+    flex-direction: column;
+    margin-left: 50rpx;
+    width: 650rpx;
+    align-items: center;
+}
+.photo{
+    border-bottom:4rpx solid darkgrey;
+    width: 100%;
+}
+.detail-photo{
+  width: 100%;
+  margin-bottom: 20rpx;
+}
+.button-style{
+  background-color:rgb(46, 139, 86);
+  border-radius: 40rpx;
+  margin-bottom: 0rpx;
+  position: fixed;
+  bottom: 0rpx;
+  margin-bottom: 20rpx;
+}

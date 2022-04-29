@@ -10,8 +10,27 @@ Page({
     vertical: false,
     autoplay: true,
     interval: 2000,
-    duration: 500
+    duration: 500,
+    nav_text:['助眠音乐','睡眠技巧','医师咨询']
   },
+  getdetail(e) {
+    console.log(e)
+    let id = e.currentTarget.dataset.item._id
+    wx.navigateTo({
+      url: '/pages/musicdetail/musicdetail?id=' + id,
+    })
+  },
+  navigatetofindings(e){
+    wx.switchTab({
+      url: '/pages/findings/findings',
+    })
+  },
+  navigatetoconsulting(e){
+    wx.switchTab({
+      url: '/pages/consulting/consulting',
+    })
+  },
+
 /**
      * 生命周期函数--监听页面加载
      */

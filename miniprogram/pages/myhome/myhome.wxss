@@ -1,26 +1,47 @@
 /* pages/myhome/myhome.wxss */
-.userinfo {
+.container{
+  display: flex;
+  width: 750rpx;
+  align-items: center;
+}
+
+.user-info {
     display: flex;
     flex-direction: column;
     align-items: center;
     color: #aaa;
   }
   
-  .userinfo-avatar {
+  .weui-cell__icon {
+    float: left;
     overflow: hidden;
     width: 64rpx;
     height: 64rpx;
     margin: 20rpx;
     border-radius: 50%;
   }
+
   
-  .usermotto {
-    margin-top: 200px;
-  }
   .usercell-class{
-      width: 750rpx;
-      height: 80rpx;
+    display: flex;
+    flex-direction: row;
+    width: 750rpx;
+    height: 40rpx;
+    justify-content: center;
+    align-items: center;
   }
   .user-button{
-      margin-top: 60rpx;
+    margin:20rpx;
+  }
+  .weui-cell__bd{
+    color: black;
+    font-weight: 700;
+    margin-left: 20rpx;
+  }
+  .bt_exit{
+    font-size: 34rpx;
+    font-weight: 700;
+    margin-top: 250rpx;
+    background-color: #fff;
+    color: rgb(255, 0, 0);
   }

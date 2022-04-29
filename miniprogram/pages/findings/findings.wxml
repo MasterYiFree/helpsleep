@@ -1,3 +1,30 @@
 <!--pages/findings/findings.wxml-->
-<text>pages/findings/findings.wxml</text>
-<image src= "{{src}}"></image> 
+<mp-searchbar><input type="text"/>
+</mp-searchbar>
+<!--不要直接写 data-item="true"，其计算结果是一个字符串，转成 boolean 类型后代表真值。-->
+<view class="mytabbar">
+    <view class="mytabbar-item" bindtap="changecontent" data-item="{{false}}" style="border-bottom: 2rpx solid {{color1}};">
+        <text class="text" style="color: {{color1}};">助眠音乐</text>
+    </view>
+    <view class="mytabbar-item" bindtap="changecontent" data-item="{{true}}" style="border-bottom: 2rpx solid {{color2}};">
+        <text class="text" style="color: {{color2}};">睡眠技巧</text>
+    </view>
+</view>
+<view wx:if="{{item}}">
+    <view class="music-list" wx:for="{{music_list}}" bindtap="getdetail" data-item="{{item}}" wx:key="this">
+        <image src="{{item.photo}}" class="music-list-photo" mode="scaleToFill"></image>
+        <view class="music-list-text">
+            <view class="musit-list-title" style="font-weight: 700;">{{item.title}}</view>
+            <view class="music-list-desc">{{item.desc}}</view>
+            <view class="music-list-label1" wx:if="{{item.label1!=''}}">{{item.label1}}</view>
+        </view>
+    </view>
+</view>
+<view wx:else>
+    <view class="tech-list" wx:for="{{tech_list}}" bindtap="getcontent" data-item="{{item}}" wx:key="this">
+        <image src="{{item.photo}}" class="tech-list-photo" mode="scaleToFill"></image>
+        <view class="tech-list-text">
+            <view class="tech-list-title">{{item.title}}</view>
+        </view>
+    </view>
+</view>

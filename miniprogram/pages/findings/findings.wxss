@@ -1,1 +1,87 @@
 /* pages/findings/findings.wxss */
+.mytabbar{
+    height: 60rpx;
+    display: flex;
+    flex-direction: row;
+    width: 750rpx;
+}
+.mytabbar-item{
+    width: 375rpx;
+    text-align: center;
+    border-bottom:2rpx solid darkgrey d;
+}
+.mytabbar-item text{
+    font-weight: 700;
+    font-size: 34rpx;
+}
+.music-list{
+    background-color: #F8F8F8;
+    height:300rpx;
+    display: flex;
+    border-bottom: 2rpx solid darkgrey;
+    margin-right: 20rpx;
+    margin-left: 20rpx;
+  }
+  .music-list-photo{
+    height: 216rpx;
+    width: 384rpx;
+    margin-top: 30rpx;
+    margin-bottom: 30rpx;
+    margin-left: 30rpx;
+    margin-right: 30rpx;
+  }
+  .music-list-text{
+    display: flex;
+    flex-direction: column;
+    margin-top: 30rpx;
+    height: 300rpx;
+    width: 306rpx;
+  }
+  .music-list-title{
+    font-weight: 700;
+    font-size: 34rpx;
+    text-align: left;
+  }
+  .music-list-desc{
+    color:darkgrey;
+    font-size: 24rpx;
+  }
+  .music-list-label1{
+    text-align: center;
+    line-height: 30rpx;/*调文字的高度*/
+    width: 120rpx;
+    height: 30rpx;
+    background-color: darkmagenta;
+    color:white;
+    font-size: 24rpx;
+    border-radius: 10rpx;
+    margin-top: 30rpx;
+  }
+  .tech-list{
+    background-color: #F8F8F8;
+    height:300rpx;
+    display: flex;
+    border-bottom: 2rpx solid darkgrey;
+    margin-right: 20rpx;
+    margin-left: 20rpx;
+  }
+  .tech-list-photo{
+    height: 216rpx;
+    width: 384rpx;
+    margin-top: 30rpx;
+    margin-bottom: 30rpx;
+    margin-left: 30rpx;
+    margin-right: 30rpx;
+  }
+  .tech-list-text{
+    display: flex;
+    flex-direction: column;
+    margin-top: 30rpx;
+    height: 300rpx;
+    width: 306rpx;
+  }
+  .tech-list-title{
+    font-weight: 700;
+    font-size: 34rpx;
+    text-align: left;
+  }

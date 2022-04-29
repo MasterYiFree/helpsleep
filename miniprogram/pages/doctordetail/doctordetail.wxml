@@ -1,0 +1,8 @@
+<!--pages/doctordetail/doctordetail.wxml-->
+<view class="page">
+    <view class="photo">
+        <image src="{{detail.photo}}" class="detail-photo" mode="aspectFill"></image>
+    </view>
+    <rich-text class="desc-spe" nodes="{{detail.descspe}}"></rich-text>
+    <button class="button-style">咨询</button>
+</view>

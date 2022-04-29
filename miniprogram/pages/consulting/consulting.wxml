@@ -1,2 +1,21 @@
-<!--pages/consulting/consulting.wxml-->
-
+<swiper indicator-dots="{{indicatorDots}}"
+        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" class="swiper-item">
+    <block wx:for="{{doctor_list}}" wx:key="this" wx:if="{{index<3}}">
+        <swiper-item>
+            <image src="{{item.photo}}" mode="aspectFill" class="swiper-image"></image>
+        </swiper-item>
+    </block>
+</swiper>
+<mp-searchbar><input type="text"/>
+</mp-searchbar>
+<view class="massage-service">
+<mp-icon class="icon-service" type="field" icon="contacts" size="30"></mp-icon>
+  <button open-type="contact" class="btn-service">联系客服 ></button>
+</view>
+<view class="doctor-list" wx:for="{{doctor_list}}" bindtap="getdetail" data-item="{{item}}" wx:key="this">
+        <image src="{{item.photo}}" class="doctor-list-photo" mode="aspectFill"></image>
+        <view class="doctor-list-text">
+            <view class="doctor-list-name" style="font-weight: 700;">{{item.name}}</view>
+            <view class="doctor-list-desc">{{item.desc}}</view>
+        </view>
+    </view>
